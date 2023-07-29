@@ -40,6 +40,12 @@ input::-webkit-input-placeholder {
     transform-origin: center;
 }
 
+.animated-water {
+    animation-name: fill-water;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
 @keyframes slide-in {
     0% {
         right: 0;
@@ -70,3 +76,21 @@ input::-webkit-input-placeholder {
     }
 }
 
+@keyframes fill-water {
+    0% {
+        height: 0;
+        y: 100%;
+    }
+    20% {
+        height: 40%;
+        y: 60%;
+    }
+    40% {
+        height: 60%;
+        y: 40%;
+    }
+    100% {
+        height: 100%;
+        y: 0;
+    }
+}

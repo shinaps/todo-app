@@ -3,7 +3,6 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
 import { loadingState } from '@/state/loadingState'
-import { colors } from '@/config/style'
 import { Center } from '@/components/util/Center'
 import { AnimatedWater } from '@/components/icons/AnimatedWater'
 
@@ -15,7 +14,7 @@ const LoadingProvider: React.FC = () => {
       {isLoading && (
         <>
           <div
-            className={`w-screen h-screen block fixed bg-${colors.transparentWhite} z-10`}
+            className={`w-screen h-screen block fixed bg-transparentWhite z-[1000]`}
           >
             <Center>
               <AnimatedWater width={'3rem'} height={'3rem'} />

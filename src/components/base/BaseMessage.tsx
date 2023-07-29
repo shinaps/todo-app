@@ -28,7 +28,7 @@ export const BaseMessage: React.FC<BaseMessageProps> = ({
   message,
   isOpen,
 }) => {
-  const [messages, setMessages] = useRecoilState(messagesState)
+  const [_, setMessages] = useRecoilState(messagesState)
 
   const closeMessage = (id: number) => {
     setMessages((prevMessages) =>
@@ -65,37 +65,70 @@ export const BaseMessage: React.FC<BaseMessageProps> = ({
       className={`animated-div`}
       style={{ animationName: isOpen ? 'slide-in' : 'slide-out' }}
     >
-      <div
-        className={`flex w-80 leading-[4rem] text-center bg-blue text-white rounded-md items-center fixed top-[1rem] z-[999] shadow-md`}
-      >
-        {type === 'error' && (
+      {type === 'error' && (
+        <div
+          className={`flex w-80 leading-[4rem] text-center bg-red text-white rounded-md items-center fixed top-[1rem] z-[999] shadow-md`}
+        >
           <div className={`flex p-[0.8rem] items-center`}>
             <Close width={'2rem'} height={'2rem'} />
           </div>
-        )}
-        {type === 'warning' && (
+          <p className={`text-left grow`}>{message}</p>
+          <div
+            className={`flex absolute top-0 right-0 p-[0.2rem] items-center`}
+            onClick={() => closeMessage(id)}
+          >
+            <Close width={'1.5rem'} height={'1.5rem'} />
+          </div>
+        </div>
+      )}
+      {type === 'info' && (
+        <div
+          className={`flex w-80 leading-[4rem] text-center bg-gray text-white rounded-md items-center fixed top-[1rem] z-[999] shadow-md`}
+        >
           <div className={`flex p-[0.8rem] items-center`}>
             <Info width={'2rem'} height={'2rem'} />
           </div>
-        )}
-        {type === 'info' && (
+          <p className={`text-left grow`}>{message}</p>
+          <div
+            className={`flex absolute top-0 right-0 p-[0.2rem] items-center`}
+            onClick={() => closeMessage(id)}
+          >
+            <Close width={'1.5rem'} height={'1.5rem'} />
+          </div>
+        </div>
+      )}
+      {type === 'warning' && (
+        <div
+          className={`flex w-80 leading-[4rem] text-center bg-yellow text-white rounded-md items-center fixed top-[1rem] z-[999] shadow-md`}
+        >
           <div className={`flex p-[0.8rem] items-center`}>
             <Info width={'2rem'} height={'2rem'} />
           </div>
-        )}
-        {type === 'success' && (
+          <p className={`text-left grow`}>{message}</p>
+          <div
+            className={`flex absolute top-0 right-0 p-[0.2rem] items-center`}
+            onClick={() => closeMessage(id)}
+          >
+            <Close width={'1.5rem'} height={'1.5rem'} />
+          </div>
+        </div>
+      )}
+      {type === 'success' && (
+        <div
+          className={`flex w-80 leading-[4rem] text-center bg-blue text-white rounded-md items-center fixed top-[1rem] z-[999] shadow-md`}
+        >
           <div className={`flex p-[0.8rem] items-center`}>
             <Check width={'2rem'} height={'2rem'} />
           </div>
-        )}
-        <p className={`text-left grow`}>{message}</p>
-        <div
-          className={`flex absolute top-0 right-0 p-[0.2rem] items-center`}
-          onClick={() => closeMessage(id)}
-        >
-          <Close width={'1.5rem'} height={'1.5rem'} />
+          <p className={`text-left grow`}>{message}</p>
+          <div
+            className={`flex absolute top-0 right-0 p-[0.2rem] items-center`}
+            onClick={() => closeMessage(id)}
+          >
+            <Close width={'1.5rem'} height={'1.5rem'} />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

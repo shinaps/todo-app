@@ -2,7 +2,6 @@
 
 import React from 'react'
 import routes from '@/config/routes'
-import { colors } from '@/config/style'
 import { useSetRecoilState } from 'recoil'
 import { loadingState } from '@/state/loadingState'
 import { AuthForm } from '@/components/features/auth/AuthForm'

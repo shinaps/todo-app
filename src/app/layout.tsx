@@ -1,5 +1,4 @@
 import './globals.css'
-import { KumaRegistry } from '@kuma-ui/next-plugin/registry'
 import React from 'react'
 import { robotoNormal } from '@/config/style'
 import RecoilProvider from '@/app/recoilProvider'
@@ -19,15 +18,13 @@ export default function RootLayout({
   return (
     <html lang='ja' className={`${robotoNormal.variable}`}>
       <body>
-        <KumaRegistry>
-          <RecoilProvider>
-            <LoadingProvider />
-            <div className={`flex flex-col max-w-sm mx-auto items-center`}>
-              <MessageProvider />
-              {children}
-            </div>
-          </RecoilProvider>
-        </KumaRegistry>
+        <RecoilProvider>
+          <LoadingProvider />
+          <div className={`flex flex-col max-w-sm mx-auto items-center`}>
+            <MessageProvider />
+            {children}
+          </div>
+        </RecoilProvider>
       </body>
     </html>
   )

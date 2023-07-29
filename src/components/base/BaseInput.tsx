@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes } from 'react'
+import { robotoMonoNormal } from '@/config/style'
 
 type BaseInputProps = InputHTMLAttributes<HTMLInputElement> & {
   id: string
@@ -11,7 +12,7 @@ export const BaseInput: React.FC<BaseInputProps> = ({
   ...props
 }: BaseInputProps) => {
   return (
-    <div className={`flex flex-col gap-4`}>
+    <div className={`flex flex-col gap-2`}>
       {label && (
         <label className={'text-blue'} htmlFor={id}>
           {label}
@@ -23,11 +24,13 @@ export const BaseInput: React.FC<BaseInputProps> = ({
         text-gray 
         h-10 
         bg-white 
-        border-b 
-        border-gray 
-        border-solid 
+        border-b-[1.5px]
+        border-gray
+        border-solid
+        tracking-wide
         px-2
         py-4
+        ${robotoMonoNormal.className}
         `}
         {...props}
       />
