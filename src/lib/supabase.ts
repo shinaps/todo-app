@@ -1,5 +1,5 @@
-import { Database } from '../../supabase/schema'
 import { createClient } from '@supabase/supabase-js'
+import { Database } from '../../supabase/schema'
 
 export const getSupabaseServerSideClient = (token?: string) => {
   const headers = token

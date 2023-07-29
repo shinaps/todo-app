@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     font-family: var(--font-roboto-normal);
     outline: none;
@@ -26,4 +30,67 @@ input:-ms-input-placeholder {
 /* Chrome, Safari, Opera */
 input::-webkit-input-placeholder {
     color: #ADB9C6;
+}
+
+.animated-div {
+    position: fixed;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+}
+
+.animated-water {
+    animation-name: fill-water;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide-in {
+    0% {
+        right: 0;
+    }
+    30% {
+        right: calc(50vw + 170px);
+    }
+    80% {
+        right: calc(50vw + 160px);
+    }
+    100% {
+        right: calc(50vw + 160px);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        right: calc(50vw + 160px);
+    }
+    20% {
+        right: calc(50vw + 170px);
+    }
+    70% {
+        right: 0;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes fill-water {
+    0% {
+        height: 0;
+        y: 100%;
+    }
+    20% {
+        height: 40%;
+        y: 60%;
+    }
+    40% {
+        height: 60%;
+        y: 40%;
+    }
+    100% {
+        height: 100%;
+        y: 0;
+    }
 }

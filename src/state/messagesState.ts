@@ -1,5 +1,5 @@
-import { atom, DefaultValue, selector } from 'recoil'
 import { BaseMessageProps } from '@/components/base/BaseMessage'
+import { atom, DefaultValue, selector } from 'recoil'
 
 type MessagesState = BaseMessageProps[]
 

@@ -1,11 +1,9 @@
-import './globals.css'
-import { KumaRegistry } from '@kuma-ui/next-plugin/registry'
-import { VStack } from '@kuma-ui/core'
-import React from 'react'
-import { robotoNormal } from '@/config/style'
-import RecoilProvider from '@/app/recoilProvider'
-import MessageProvider from '@/app/messageProvider'
 import LoadingProvider from '@/app/loadingProvider'
+import MessageProvider from '@/app/messageProvider'
+import RecoilProvider from '@/app/recoilProvider'
+import { robotoNormal } from '@/config/style'
+import React from 'react'
+import './globals.css'
 
 export const metadata = {
   title: 'kuma-swr-todo-app',
@@ -20,15 +18,13 @@ export default function RootLayout({
   return (
     <html lang='ja' className={`${robotoNormal.variable}`}>
       <body>
-        <KumaRegistry>
-          <RecoilProvider>
-            <LoadingProvider />
-            <VStack maxWidth={'384px'} mx={'auto'} alignItems={'center'}>
-              <MessageProvider />
-              {children}
-            </VStack>
-          </RecoilProvider>
-        </KumaRegistry>
+        <RecoilProvider>
+          <LoadingProvider />
+          <div className={`flex flex-col max-w-sm mx-auto items-center`}>
+            <MessageProvider />
+            {children}
+          </div>
+        </RecoilProvider>
       </body>
     </html>
   )

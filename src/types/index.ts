@@ -16,11 +16,9 @@ type AuthFormPropsSafeParseResult =
 
 type AuthFormProps = {
   handleSubmit: ({ success, data }: AuthFormPropsSafeParseResult) => void
-  color: string
   formTitle: string
   otherRouteTitle: string
   otherRoute: string
-  otherRouteColor: string
 }
 
 export type { AuthFormProps, AuthFormPropsSafeParseResult }

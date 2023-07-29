@@ -1,16 +1,15 @@
 'use client'
 
-import React from 'react'
-import routes from '@/config/routes'
-import { colors } from '@/config/style'
-import { useSetRecoilState } from 'recoil'
-import { loadingState } from '@/state/loadingState'
+import { SignInResponse } from '@/app/api/auth/sign-in/route'
 import { AuthForm } from '@/components/features/auth/AuthForm'
+import apiRoutes from '@/config/apiRoutes'
+import routes from '@/config/routes'
+import { post } from '@/lib/utils'
+import { loadingState } from '@/state/loadingState'
 import { addMessage } from '@/state/messagesState'
 import { AuthFormPropsSafeParseResult } from '@/types'
-import { post } from '@/lib/utils'
-import { SignInResponse } from '@/app/api/auth/sign-in/route'
-import apiRoutes from '@/config/apiRoutes'
+import React from 'react'
+import { useSetRecoilState } from 'recoil'
 
 export const SignInForm: React.FC = () => {
   const setMessage = useSetRecoilState(addMessage)
@@ -52,11 +51,9 @@ export const SignInForm: React.FC = () => {
   return (
     <AuthForm
       handleSubmit={handleSubmit}
-      color={colors.purple}
       formTitle='Sign In'
       otherRouteTitle='Sign Up'
       otherRoute={routes.signUp}
-      otherRouteColor={colors.blue}
     />
   )
 }

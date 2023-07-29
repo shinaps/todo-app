@@ -1,5 +1,4 @@
 import React, { SVGProps } from 'react'
-import { css } from '@kuma-ui/core'
 
 export const AnimatedWater: React.FC<SVGProps<SVGSVGElement>> = (props) => (
   <svg
@@ -16,29 +15,7 @@ export const AnimatedWater: React.FC<SVGProps<SVGSVGElement>> = (props) => (
           y='100%'
           width='100%'
           height='0'
-          className={css`
-            animation-name: change-bolt-color;
-            animation-duration: 3s;
-            animation-iteration-count: infinite;
-            @keyframes change-bolt-color {
-              0% {
-                height: 0;
-                y: 100%;
-              }
-              20% {
-                height: 40%;
-                y: 60%;
-              }
-              40% {
-                height: 60%;
-                y: 40%;
-              }
-              100% {
-                height: 100%;
-                y: 0;
-              }
-            }
-          `}
+          className={`animated-water`}
         />
       </clipPath>
     </defs>
