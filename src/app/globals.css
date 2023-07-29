@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     font-family: var(--font-roboto-normal);
     outline: none;
@@ -27,3 +31,42 @@ input:-ms-input-placeholder {
 input::-webkit-input-placeholder {
     color: #ADB9C6;
 }
+
+.animated-div {
+    position: fixed;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin: center;
+}
+
+@keyframes slide-in {
+    0% {
+        right: 0;
+    }
+    30% {
+        right: calc(50vw + 170px);
+    }
+    80% {
+        right: calc(50vw + 160px);
+    }
+    100% {
+        right: calc(50vw + 160px);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        right: calc(50vw + 160px);
+    }
+    20% {
+        right: calc(50vw + 170px);
+    }
+    70% {
+        right: 0;
+    }
+    100% {
+        right: 0;
+    }
+}
+

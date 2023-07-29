@@ -52,11 +52,9 @@ export const SignInForm: React.FC = () => {
   return (
     <AuthForm
       handleSubmit={handleSubmit}
-      color={colors.purple}
       formTitle='Sign In'
       otherRouteTitle='Sign Up'
       otherRoute={routes.signUp}
-      otherRouteColor={colors.blue}
     />
   )
 }

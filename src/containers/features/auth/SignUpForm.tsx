@@ -2,7 +2,6 @@
 
 import React from 'react'
 import routes from '@/config/routes'
-import { colors } from '@/config/style'
 import { useSetRecoilState } from 'recoil'
 import { loadingState } from '@/state/loadingState'
 import { AuthForm } from '@/components/features/auth/AuthForm'
@@ -52,11 +51,9 @@ export const SignUpForm: React.FC = () => {
   return (
     <AuthForm
       handleSubmit={handleSubmit}
-      color={colors.blue}
       formTitle='Sign Up'
       otherRouteTitle='Sign In'
       otherRoute={routes.signIn}
-      otherRouteColor={colors.purple}
     />
   )
 }

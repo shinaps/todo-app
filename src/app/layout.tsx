@@ -1,6 +1,5 @@
 import './globals.css'
 import { KumaRegistry } from '@kuma-ui/next-plugin/registry'
-import { VStack } from '@kuma-ui/core'
 import React from 'react'
 import { robotoNormal } from '@/config/style'
 import RecoilProvider from '@/app/recoilProvider'
@@ -23,10 +22,10 @@ export default function RootLayout({
         <KumaRegistry>
           <RecoilProvider>
             <LoadingProvider />
-            <VStack maxWidth={'384px'} mx={'auto'} alignItems={'center'}>
+            <div className={`flex flex-col max-w-sm mx-auto items-center`}>
               <MessageProvider />
               {children}
-            </VStack>
+            </div>
           </RecoilProvider>
         </KumaRegistry>
       </body>

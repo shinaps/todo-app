@@ -3,7 +3,6 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
 import { loadingState } from '@/state/loadingState'
-import { Box } from '@kuma-ui/core'
 import { colors } from '@/config/style'
 import { Center } from '@/components/util/Center'
 import { AnimatedWater } from '@/components/icons/AnimatedWater'
@@ -15,18 +14,13 @@ const LoadingProvider: React.FC = () => {
     <>
       {isLoading && (
         <>
-          <Box
-            width={'100vw'}
-            height={'100vh'}
-            display={'block'}
-            position={'fixed'}
-            bgColor={colors.transparentWhite}
-            zIndex={1000}
+          <div
+            className={`w-screen h-screen block fixed bg-${colors.transparentWhite} z-10`}
           >
             <Center>
               <AnimatedWater width={'3rem'} height={'3rem'} />
             </Center>
-          </Box>
+          </div>
         </>
       )}
     </>
