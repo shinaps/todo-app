@@ -9,14 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@kuma-ui/core": "^1.1.0",
+    "@supabase/supabase-js": "^2.31.0",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
+    "prettier": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "recoil": "^0.7.7",
+    "supabase": "^1.82.2",
+    "swr": "^2.2.0",
+    "typescript": "5.1.6",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@kuma-ui/next-plugin": "^1.1.1",
+    "@types/uuid": "^9.0.2"
   }
 }

@@ -1,0 +1,55 @@
+import React, { SVGProps } from 'react'
+import { css } from '@kuma-ui/core'
+
+export const AnimatedWater: React.FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='1em'
+    height='1em'
+    viewBox='0 0 24 24'
+    {...props}
+  >
+    <defs>
+      <clipPath id='clip'>
+        <rect
+          x='0'
+          y='100%'
+          width='100%'
+          height='0'
+          className={css`
+            animation-name: change-bolt-color;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            @keyframes change-bolt-color {
+              0% {
+                height: 0;
+                y: 100%;
+              }
+              20% {
+                height: 40%;
+                y: 60%;
+              }
+              40% {
+                height: 60%;
+                y: 40%;
+              }
+              100% {
+                height: 100%;
+                y: 0;
+              }
+            }
+          `}
+        />
+      </clipPath>
+    </defs>
+    <path
+      fill='#ADB9C6'
+      d='M12.66 2.58c-.38-.33-.95-.33-1.33 0C6.45 6.88 4 10.62 4 13.8c0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.18-2.45-6.92-7.34-11.22zM7.83 14c.37 0 .67.26.74.62c.41 2.22 2.28 2.98 3.64 2.87c.43-.02.79.32.79.75c0 .4-.32.73-.72.75c-2.13.13-4.62-1.09-5.19-4.12a.75.75 0 0 1 .74-.87z'
+    />
+    <path
+      fill='#6c88fa'
+      d='M12.66 2.58c-.38-.33-.95-.33-1.33 0C6.45 6.88 4 10.62 4 13.8c0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.18-2.45-6.92-7.34-11.22zM7.83 14c.37 0 .67.26.74.62c.41 2.22 2.28 2.98 3.64 2.87c.43-.02.79.32.79.75c0 .4-.32.73-.72.75c-2.13.13-4.62-1.09-5.19-4.12a.75.75 0 0 1 .74-.87z'
+      clipPath='url(#clip)'
+    />
+  </svg>
+)
