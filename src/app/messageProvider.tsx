@@ -1,9 +1,9 @@
 'use client'
 
+import { BaseMessage } from '@/components/base'
+import { messagesState } from '@/state/messagesState'
 import React from 'react'
 import { useRecoilValue } from 'recoil'
-import { BaseMessage } from '@/components/base/BaseMessage'
-import { messagesState } from '@/state/messagesState'
 
 const MessageProvider: React.FC = () => {
   const messages = useRecoilValue(messagesState)

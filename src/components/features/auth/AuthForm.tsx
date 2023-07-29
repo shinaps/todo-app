@@ -1,22 +1,16 @@
 'use client'
 
-import React, { FormEvent, useState } from 'react'
-import { Box, VStack } from '@kuma-ui/core'
-import { colors, width } from '@/config/style'
-import { Center } from '@/components/util/Center'
-import { BaseLink } from '@/components/base/BaseLink'
-import { BaseInput } from '@/components/base/BaseInput'
-import { BaseButton } from '@/components/base/BaseButton'
+import { BaseButton, BaseInput, BaseLink } from '@/components/base'
+import { Center } from '@/components/util'
 import { AuthFormProps } from '@/types'
 import { authFormCredentialsSchema } from '@/zod'
+import React, { FormEvent, useState } from 'react'
 
 export const AuthForm: React.FC<AuthFormProps> = ({
   handleSubmit,
-  color,
   formTitle,
   otherRouteTitle,
   otherRoute,
-  otherRouteColor,
 }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -32,80 +26,45 @@ export const AuthForm: React.FC<AuthFormProps> = ({
 
   return (
     <Center>
-      <Box position={'relative'}>
-        <Box
-          position={'absolute'}
-          zIndex={2}
-          top={'calc(-25vh - 44px)'}
-          left={`-${width.containerInt / 2}px`}
-          width={'92px'}
-          height={'60px'}
-          py={12}
-          bgColor={color}
-          color={colors.white}
-          textAlign={'center'}
-          borderRadius={8}
+      <div className={`relative`}>
+        <div
+          className={`absolute z-[2] top-[calc(-25vh-44px)] left-[-160px] w-24 h-16 py-3 bg-blue text-white text-center rounded-lg`}
         >
           {formTitle}
-        </Box>
-        <BaseLink href={otherRoute} color={colors.white}>
-          <Box
-            position={'absolute'}
-            zIndex={1}
-            top={'calc(-25vh - 44px)'}
-            left={`calc(-${width.containerInt / 2}px + 80px)`}
-            width={'92px'}
-            height={'60px'}
-            py={12}
-            bgColor={otherRouteColor}
-            color={colors.white}
-            textAlign={'center'}
-            borderRadius={8}
+        </div>
+        <BaseLink href={otherRoute}>
+          <div
+            className={`absolute z-[1] top-[calc(-25vh-44px)] left-[-80px] w-24 h-16 py-3 bg-purple text-white text-center rounded-lg`}
           >
             {otherRouteTitle}
-          </Box>
+          </div>
         </BaseLink>
-        <Box
-          width={width.container}
-          position={'absolute'}
-          top={'-25vh'}
-          left={`-${width.containerInt / 2}px`}
-          zIndex={10}
-          bgColor={colors.white}
-          boxShadow={`0px 2px 10px -2px ${colors.gray}`}
-          px={20}
-          py={32}
-          borderRadius={16}
+        <div
+          className={`w-80 absolute z-10 top-[-25vh] left-[-160px] bg-white shadow-lg px-8 py-12 rounded-md`}
         >
-          <VStack gap={24}>
-            <form onSubmit={onSubmit}>
-              <VStack gap={48}>
-                <BaseInput
-                  id={`auth-form__input_email`}
-                  label='Email'
-                  type='email'
-                  value={email}
-                  autoComplete={'email'}
-                  color={color}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <BaseInput
-                  id={`auth-form__input_password`}
-                  label='Password'
-                  type='password'
-                  value={password}
-                  autoComplete={'new-password'}
-                  color={color}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <BaseButton type='submit' color={color}>
-                  {formTitle}
-                </BaseButton>
-              </VStack>
-            </form>
-          </VStack>
-        </Box>
-      </Box>
+          <form onSubmit={onSubmit}>
+            <div className={`flex flex-col gap-12`}>
+              <BaseInput
+                id={`auth-form__input_email`}
+                label='Email'
+                type='email'
+                value={email}
+                autoComplete={'email'}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <BaseInput
+                id={`auth-form__input_password`}
+                label='Password'
+                type='password'
+                value={password}
+                autoComplete={'new-password'}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <BaseButton type='submit'>{formTitle}</BaseButton>
+            </div>
+          </form>
+        </div>
+      </div>
     </Center>
   )
 }
