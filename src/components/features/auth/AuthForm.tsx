@@ -40,7 +40,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({
           </div>
         </BaseLink>
         <div
-          className={`w-80 absolute z-10 top-[-25vh] left-[-160px] bg-white shadow-md px-8 py-12 rounded-md`}
+          className={`w-80 absolute z-10 top-[-25vh] left-[-160px] bg-white shadow-lg px-8 py-12 rounded-md`}
         >
           <form onSubmit={onSubmit}>
             <div className={`flex flex-col gap-12`}>
