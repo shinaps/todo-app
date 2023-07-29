@@ -1,7 +1,6 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
 import { getSupabaseServerSideClient } from '@/lib/supabase'
 import { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
+import { NextRequest, NextResponse } from 'next/server'
 
 const APP_URL = process.env.APP_URL
 const { supabaseServerSideClient } = getSupabaseServerSideClient()

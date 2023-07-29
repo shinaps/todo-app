@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import { Session, User } from '@supabase/gotrue-js'
+import { useState } from 'react'
 
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null)

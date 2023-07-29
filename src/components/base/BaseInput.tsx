@@ -1,5 +1,5 @@
-import React, { InputHTMLAttributes } from 'react'
 import { robotoMonoNormal } from '@/config/style'
+import React, { InputHTMLAttributes } from 'react'
 
 type BaseInputProps = InputHTMLAttributes<HTMLInputElement> & {
   id: string
@@ -10,7 +10,7 @@ export const BaseInput: React.FC<BaseInputProps> = ({
   id,
   label,
   ...props
-}: BaseInputProps) => {
+}) => {
   return (
     <div className={`flex flex-col gap-2`}>
       {label && (

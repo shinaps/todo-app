@@ -1,12 +1,10 @@
 'use client'
 
-import React, { FormEvent, useState } from 'react'
-import { Center } from '@/components/util/Center'
-import { BaseLink } from '@/components/base/BaseLink'
-import { BaseInput } from '@/components/base/BaseInput'
-import { BaseButton } from '@/components/base/BaseButton'
+import { BaseButton, BaseInput, BaseLink } from '@/components/base'
+import { Center } from '@/components/util'
 import { AuthFormProps } from '@/types'
 import { authFormCredentialsSchema } from '@/zod'
+import React, { FormEvent, useState } from 'react'
 
 export const AuthForm: React.FC<AuthFormProps> = ({
   handleSubmit,

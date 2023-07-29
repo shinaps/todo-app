@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react'
-import { colors } from '@/config/style'
-import { useRecoilState } from 'recoil'
-import { Close } from '@/components/icons/Close'
-import { Info } from '@/components/icons/Info'
-import { Check } from '@/components/icons/Check'
+import { Check, Close, Info } from '@/components/icons'
 import { messagesState } from '@/state/messagesState'
+import React, { useEffect } from 'react'
+import { useRecoilState } from 'recoil'
 
 type MessageType = 'error' | 'warning' | 'info' | 'success'
 
@@ -13,13 +10,6 @@ export type BaseMessageProps = {
   type: MessageType
   message: string
   isOpen: boolean
-}
-
-const color = {
-  error: colors.red,
-  warning: colors.yellow,
-  info: colors.gray,
-  success: colors.blue,
 }
 
 export const BaseMessage: React.FC<BaseMessageProps> = ({

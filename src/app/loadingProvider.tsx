@@ -1,10 +1,10 @@
 'use client'
 
+import { AnimatedWater } from '@/components/icons'
+import { Center } from '@/components/util'
+import { loadingState } from '@/state/loadingState'
 import React from 'react'
 import { useRecoilValue } from 'recoil'
-import { loadingState } from '@/state/loadingState'
-import { Center } from '@/components/util/Center'
-import { AnimatedWater } from '@/components/icons/AnimatedWater'
 
 const LoadingProvider: React.FC = () => {
   const isLoading = useRecoilValue(loadingState)

@@ -1,15 +1,15 @@
 'use client'
 
-import React from 'react'
-import routes from '@/config/routes'
-import { useSetRecoilState } from 'recoil'
-import { loadingState } from '@/state/loadingState'
+import { SignUpResponse } from '@/app/api/auth/sign-up/route'
 import { AuthForm } from '@/components/features/auth/AuthForm'
+import apiRoutes from '@/config/apiRoutes'
+import routes from '@/config/routes'
+import { post } from '@/lib/utils'
+import { loadingState } from '@/state/loadingState'
 import { addMessage } from '@/state/messagesState'
 import { AuthFormPropsSafeParseResult } from '@/types'
-import { post } from '@/lib/utils'
-import { SignUpResponse } from '@/app/api/auth/sign-up/route'
-import apiRoutes from '@/config/apiRoutes'
+import React from 'react'
+import { useSetRecoilState } from 'recoil'
 
 export const SignUpForm: React.FC = () => {
   const setMessage = useSetRecoilState(addMessage)

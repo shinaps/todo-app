@@ -1,9 +1,9 @@
-import './globals.css'
-import React from 'react'
-import { robotoNormal } from '@/config/style'
-import RecoilProvider from '@/app/recoilProvider'
-import MessageProvider from '@/app/messageProvider'
 import LoadingProvider from '@/app/loadingProvider'
+import MessageProvider from '@/app/messageProvider'
+import RecoilProvider from '@/app/recoilProvider'
+import { robotoNormal } from '@/config/style'
+import React from 'react'
+import './globals.css'
 
 export const metadata = {
   title: 'kuma-swr-todo-app',

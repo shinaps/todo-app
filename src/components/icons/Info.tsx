@@ -1,6 +1,6 @@
-import { SVGProps } from 'react'
+import React, { SVGProps } from 'react'
 
-export const Info = (props: SVGProps<SVGSVGElement>) => {
+export const Info: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
