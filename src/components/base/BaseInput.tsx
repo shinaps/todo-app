@@ -13,7 +13,7 @@ export const BaseInput: React.FC<BaseInputProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-2 border-b-[1.5px] border-gray border-solid`}
+      className={`flex flex-col gap-2 border-b-[1.5px] border-gray border-solid pb-1`}
     >
       {label && (
         <label className={'text-blue'} htmlFor={id}>
@@ -28,7 +28,7 @@ export const BaseInput: React.FC<BaseInputProps> = ({
         bg-white 
         tracking-wide
         px-2
-        py-4
+        pt-2
         ${robotoMonoNormal.className}
         `}
         {...props}
