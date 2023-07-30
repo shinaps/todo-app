@@ -12,7 +12,9 @@ export const BaseInput: React.FC<BaseInputProps> = ({
   ...props
 }) => {
   return (
-    <div className={`flex flex-col gap-2`}>
+    <div
+      className={`flex flex-col gap-2 border-b-[1.5px] border-gray border-solid`}
+    >
       {label && (
         <label className={'text-blue'} htmlFor={id}>
           {label}
@@ -24,9 +26,6 @@ export const BaseInput: React.FC<BaseInputProps> = ({
         text-gray 
         h-10 
         bg-white 
-        border-b-[1.5px]
-        border-gray
-        border-solid
         tracking-wide
         px-2
         py-4
