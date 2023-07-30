@@ -1,6 +1,6 @@
 'use client'
 
-import { BaseMessage } from '@/components/base'
+import { Message } from '@/components/UI'
 import { messagesState } from '@/state/messagesState'
 import React from 'react'
 import { useRecoilValue } from 'recoil'
@@ -11,7 +11,7 @@ const MessageProvider: React.FC = () => {
   return (
     <>
       {messages.map((message) => (
-        <BaseMessage key={message.id} {...message}></BaseMessage>
+        <Message key={message.id} {...message}></Message>
       ))}
     </>
   )

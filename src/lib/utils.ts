@@ -26,3 +26,7 @@ export const post: Post = async <T = any>(
     data: responseData,
   }
 }
+
+export const sleep = (milliSeconds: number) => {
+  return new Promise((resolve) => setTimeout(resolve, milliSeconds))
+}
